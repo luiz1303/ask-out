@@ -1,0 +1,158 @@
+:root {
+  --main-color: #ff1493;
+  --secondary-color: #20181d;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  display: flex;
+}
+
+.mainContent {
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1.5rem;
+  z-index: 1;
+}
+
+.bgTexture {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  background-image: radial-gradient(
+      var(--main-color) 0.05rem,
+      transparent 0.05rem
+    ),
+    radial-gradient(var(--main-color) 0.05rem, white 0.05rem);
+  opacity: 0.45;
+  background-size: 2rem 2rem;
+  background-position: 0 0, 1rem 1rem;
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-0.2rem, -0.2rem);
+  }
+  50% {
+    transform: translate(0.2rem, 0.2rem);
+  }
+  75% {
+    transform: translate(0.2rem, -0.2rem);
+  }
+}
+
+h1 {
+  color: var(--main-color);
+  line-height: 100%;
+  font-size: 3.4rem;
+  text-align: center;
+  font-weight: 900;
+  position: relative;
+  max-width: 85vw;
+  animation: wiggle 4s ease-in-out infinite;
+  transition: all 250ms ease-in-out;
+  user-select: none;
+
+  @media only screen and (max-width: 992px) {
+    font-size: 2.4rem;
+  }
+
+  @media only screen and (max-width: 575px) {
+    font-size: 1.5rem;
+  }
+}
+
+h3 {
+  color: var(--secondary-color);
+  line-height: 100%;
+  font-size: 0.875rem;
+  text-align: center;
+  font-weight: 600;
+  position: absolute;
+  bottom: 2rem;
+  max-width: 85vw;
+  animation: wiggle 8s ease-in-out infinite;
+  transition: all 250ms ease-in-out;
+  user-select: none;
+}
+
+h3:hover {
+  font-size: 1.2rem;
+  filter: brightness(1.5);
+}
+
+.btnWrapper {
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  color: white;
+  border: none;
+  user-select: none;
+  transition: all 125ms ease;
+  cursor: pointer;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1.25rem;
+  padding: 0.75rem 1.75rem;
+}
+
+.btnMain {
+  background-color: var(--main-color);
+}
+
+.biggerBtn {
+  transition: all 1s ease;
+  padding: 1.35rem 3rem;
+  font-size: 2rem;
+}
+
+.btnSecondary {
+  background-color: var(--secondary-color);
+}
+
+.button:hover {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+}
+
+.button:active {
+  transform: scale(0.9);
+  filter: brightness(0.9);
+}
+
+#mainImage {
+  width: 50vw;
+  border-radius: 1rem;
+  max-width: 16rem;
+}
